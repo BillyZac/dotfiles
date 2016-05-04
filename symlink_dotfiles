@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=(.gitconfig)
+DOTFILES=(.gitconfig .atom)
 
 #Remove old dotfiles and replace them
 for dotfile in $(echo ${DOTFILES[*]});
