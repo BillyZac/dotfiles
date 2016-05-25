@@ -1,5 +1,5 @@
 [user]
-	email = billyzacsmith@gmail.com
+	email = william.smith1@wipro.com 
 	name = Zachary Smith
 
 [color]
@@ -33,3 +33,12 @@
 	lg = "log --oneline --decorate --all --"
 [push]
 	default = simple
+[core]
+	excludesfile = /Users/zacharysmith/.gitignore_global
+	editor = atom --wait
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
