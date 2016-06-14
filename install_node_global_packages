@@ -1,0 +1,5 @@
+#!/bin/bash
+
+PACKAGES=(http-server httpster express-generator knex nodemon mocha chai)
+
+npm install -g $(echo ${PACKAGES[*]})

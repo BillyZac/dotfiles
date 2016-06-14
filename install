@@ -1,0 +1,4 @@
+#!/bin/bash
+
+./symlink_dotfiles
+./install_node_global_packages
