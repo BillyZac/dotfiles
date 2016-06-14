@@ -1,5 +1,5 @@
 #!/bin/bash
 
-PACKAGES=(http-server httpster express-generator knex nodemon mocha chai)
+PACKAGES=(http-server httpster express-generator knex nodemon mocha chai trash tree)
 
 npm install -g $(echo ${PACKAGES[*]})
