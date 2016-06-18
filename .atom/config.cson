@@ -3,16 +3,11 @@
     _analyticsUserId: "1b96b417-d19c-4bad-b862-f2a2b99c83e4"
   autosave:
     enabled: true
-  core:
-    disabledPackages: [
-      "linter"
-      "jshint"
-    ]
+  core: {}
   editor:
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
-    softWrap: true
   "exception-reporting":
     userId: "448fd2fe-3000-da0c-065c-1f85eae6db7f"
   welcome:
