@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=(.gitconfig .vimrc)
+DOTFILES=(.gitconfig .vimrc .bash_profile)
 
 #Remove old dotfiles and replace them
 for dotfile in $(echo ${DOTFILES[*]});
