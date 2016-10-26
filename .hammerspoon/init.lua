@@ -1,60 +1,89 @@
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.notify.new({title="Hammerspoon", informativeText="Hello werld."}):send()
-end)
+-- init grid
+hs.grid.MARGINX 	= 0
+hs.grid.MARGINY 	= 0
+hs.grid.GRIDWIDTH  	= 3
+hs.grid.GRIDHEIGHT 	= 2
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
-  local win = hs.window.focusedWindow()
-  local f = win:frame()
+-- disable animation
+hs.window.animationDuration = 0
+--hs.hints.style = "vimperator"
 
-  f.x = f.x - 1000
-  win:setFrame(f)
-end)
+-- hotkey mash
+local mash       = {"ctrl", "alt"}
+local mash_app 	 = {"cmd", "alt", "ctrl"}
+local mash_shift = {"ctrl", "alt", "shift"}
+local mash_cmd	 = {"cmd", "cntrl", "shift"}
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "Left", function()
-  hs.notify.new({title="Hammerspoon", informativeText="Switcheroonee..."}):send()
-  local laptopScreen = "Color LCD"
-  local windowLayout = {
-      {"Google Chrome", nil, laptopScreen, hs.layout.left50, nil, nil},
-      {"Atom", nil, laptopScreen, hs.layout.right50, nil, nil},
-      {"Terminal", nil, laptopScreen, hs.layout.right50, nil, nil},
-  }
-  hs.layout.apply(windowLayout)
-end)
+--------------------------------------------------------------------------------
+appCuts = {
+  t = 'Terminal',
+  g = 'Google chrome',
+  s = 'Slack',
+  f = 'Finder',
+  m = 'Mail',
+  a = 'Atom'
+}
 
-function applicationWatcher(appName, eventType, appObject)
-    if (eventType == hs.application.watcher.activated) then
-        if (appName == "Finder") then
-            -- Bring all Finder windows forward when one gets activated
-            appObject:selectMenuItem({"Window", "Bring All to Front"})
-        end
-    end
-end
-local appWatcher = hs.application.watcher.new(applicationWatcher)
-appWatcher:start()
-
-local wifiWatcher = nil
-local homeSSID = "WeWork"
-local lastSSID = hs.wifi.currentNetwork()
-
-function ssidChangedCallback()
-    newSSID = hs.wifi.currentNetwork()
-
-    if newSSID == homeSSID and lastSSID ~= homeSSID then
-        -- We just joined our home WiFi network
-        hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send()
-    end
-
-    lastSSID = newSSID
+-- Launch applications
+for key, app in pairs(appCuts) do
+  hs.hotkey.bind(mash_app, key, function () hs.application.launchOrFocus(app) end)
 end
 
-wifiWatcher = hs.wifi.watcher.new(ssidChangedCallback)
-wifiWatcher:start()
+-- global operations
+hs.hotkey.bind(mash, ';', function() hs.grid.snap(hs.window.focusedWindow()) end)
+hs.hotkey.bind(mash, "'", function() hs.fnutils.map(hs.window.visibleWindows(), hs.grid.snap) end)
 
-hs.urlevent.bind("synapseMessage", function(eventName, params)
-    hs.notify.new({title="Hammerspoon", informativeText="Synapse is loaded."}):send()
-end)
+-- adjust grid size
+hs.hotkey.bind(mash, '=', function() hs.grid.adjustWidth( 1) end)
+hs.hotkey.bind(mash, '-', function() hs.grid.adjustWidth(-1) end)
+hs.hotkey.bind(mash, ']', function() hs.grid.adjustHeight( 1) end)
+hs.hotkey.bind(mash, '[', function() hs.grid.adjustHeight(-1) end)
 
-hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
-  hs.reload()
-end)
-hs.notify.new({title="Hammerspoon", informativeText="Config reloaded"}):send()
+-- change focus
+hs.hotkey.bind(mash_app, 'left', function() hs.window.focusedWindow():focusWindowWest() end)
+hs.hotkey.bind(mash_app, 'right', function() hs.window.focusedWindow():focusWindowEast() end)
+hs.hotkey.bind(mash_app, 'up', function() hs.window.focusedWindow():focusWindowNorth() end)
+hs.hotkey.bind(mash_app, 'down', function() hs.window.focusedWindow():focusWindowSouth() end)
+
+hs.hotkey.bind(mash, '\\', hs.grid.maximizeWindow)
+
+-- multi monitor
+hs.hotkey.bind(mash, 'pagedown', hs.grid.pushWindowNextScreen)
+hs.hotkey.bind(mash, 'pageup', hs.grid.pushWindowPrevScreen)
+
+-- move windows
+hs.hotkey.bind(mash, 'left', hs.grid.pushWindowLeft)
+hs.hotkey.bind(mash, 'down', hs.grid.pushWindowDown)
+hs.hotkey.bind(mash, 'up', hs.grid.pushWindowUp)
+hs.hotkey.bind(mash, 'right', hs.grid.pushWindowRight)
+
+-- resize windows
+hs.hotkey.bind(mash_shift, 'left', hs.grid.resizeWindowThinner)
+hs.hotkey.bind(mash_shift, 'up', hs.grid.resizeWindowShorter)
+hs.hotkey.bind(mash_shift, 'down', hs.grid.resizeWindowTaller)
+hs.hotkey.bind(mash_shift, 'right', hs.grid.resizeWindowWider)
+
+-- Window Hints
+hs.hotkey.bind(mash, '.', hs.hints.windowHints)
+
+-- snap all newly launched windows
+local function auto_tile(appName, event)
+	if event == hs.application.watcher.launched then
+		local app = hs.appfinder.appFromName(appName)
+		-- protect against unexpected restarting windows
+		if app == nil then
+			return
+		end
+		hs.fnutils.map(app:allWindows(), hs.grid.snap)
+	end
+end
+
+-- start app launch watcher
+hs.application.watcher.new(auto_tile):start()
+
+-- config auto-reload
+local function reload_config(files)
+    hs.reload()
+end
+hs.pathwatcher.new(hs.configdir, reload_config):start()
+hs.alert.show("Config Re-loaded")
