@@ -1,11 +1,9 @@
 -- init grid
 hs.grid.MARGINX 	= 0
 hs.grid.MARGINY 	= 0
-hs.grid.GRIDWIDTH  	= 3
-hs.grid.GRIDHEIGHT 	= 2
+hs.grid.GRIDWIDTH  	= 4
+hs.grid.GRIDHEIGHT 	= 5
 
--- disable animation
-hs.window.animationDuration = 0
 --hs.hints.style = "vimperator"
 
 -- hotkey mash
@@ -24,10 +22,23 @@ appCuts = {
   a = 'Atom'
 }
 
+favorites = {
+  z = 'Terminal',
+  g = 'Google chrome',
+  a = 'Atom',
+  m = 'Mail'
+}
+
 -- Launch applications
 for key, app in pairs(appCuts) do
   hs.hotkey.bind(mash_app, key, function () hs.application.launchOrFocus(app) end)
 end
+
+hs.hotkey.bind(mash, 'z', function()
+  for key, app in pairs(favorites) do
+    hs.application.launchOrFocus(app)
+  end
+end)
 
 -- global operations
 hs.hotkey.bind(mash, ';', function() hs.grid.snap(hs.window.focusedWindow()) end)
