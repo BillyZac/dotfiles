@@ -10,7 +10,6 @@ hs.grid.GRIDHEIGHT 	= 5
 local mash       = {"ctrl", "alt"}
 local mash_app 	 = {"cmd", "alt", "ctrl"}
 local mash_shift = {"ctrl", "alt", "shift"}
-local mash_cmd	 = {"cmd", "cntrl", "shift"}
 
 --------------------------------------------------------------------------------
 appCuts = {
