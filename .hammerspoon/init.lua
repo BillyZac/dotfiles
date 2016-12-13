@@ -10,7 +10,7 @@ hs.grid.GRIDHEIGHT 	= 5
 local mash       = {"ctrl", "alt"}
 local mash_app 	 = {"cmd", "alt", "ctrl"}
 local mash_shift = {"ctrl", "alt", "shift"}
-local mash_cmd	 = {"cmd", "cntrl", "shift"}
+local mash_cmd	 = {"cmd", "ctrl", "shift"}
 
 --------------------------------------------------------------------------------
 appCuts = {
@@ -19,7 +19,8 @@ appCuts = {
   s = 'Slack',
   f = 'Finder',
   m = 'Mail',
-  a = 'Atom'
+  a = 'Atom',
+  o = 'Microsoft Outlook'
 }
 
 favorites = {
