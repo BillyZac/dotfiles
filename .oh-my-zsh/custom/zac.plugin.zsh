@@ -13,4 +13,4 @@ alias sb="cd $HOME/work/eolas/ && npm install && node ./index.js"
 alias m="mongod"
 
 # git
-alias gl="git log --oneline -n 10"
+alias gl="git log --oneline -n 20"
