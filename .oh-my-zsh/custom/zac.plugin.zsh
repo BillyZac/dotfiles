@@ -14,3 +14,6 @@ alias m="mongod"
 
 # git
 alias gl="git log --oneline -n 10"
+
+# clear the screen, esp useful in tmux, where cmd+k doesn't play nice with panes
+alias c="clear"
