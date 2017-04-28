@@ -13,7 +13,7 @@ alias sb="cd $HOME/work/eolas/ && npm install && node ./index.js"
 alias m="mongod"
 
 # git
-alias gl="git log --oneline -n 10"
+alias gl="git log --oneline -n 20"
 
 # clear the screen, esp useful in tmux, where cmd+k doesn't play nice with panes
 alias c="clear"
