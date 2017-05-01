@@ -1,3 +1,6 @@
+# Applications
+alias a="atom ."
+
 # Synapse project
 
 # cd into Synapse front-end
