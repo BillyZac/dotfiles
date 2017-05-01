@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=(.gitconfig .vimrc .bash_profile .oh-my-zsh/custom .zshrc .hammerspoon)
+DOTFILES=(.gitconfig .vimrc .bash_profile .zshrc .hammerspoon)
 
 #Remove old dotfiles and replace them
 for dotfile in $(echo ${DOTFILES[*]});
@@ -8,3 +8,7 @@ do
     sudo rm -rf ~/$(echo $dotfile)
     ln -s ~/dotfiles/$(echo $dotfile) ~/$(echo $dotfile)
 done
+
+# Set zsh aliases
+rm ~/.oh-my-zsh/custom/zac.zsh
+ln -s ~/dotfiles/zac.zsh ~/.oh-my-zsh/custom/zac.zsh
