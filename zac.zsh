@@ -1,5 +1,6 @@
 # Applications
 alias a="atom ."
+alias v="vim ."
 
 # Synapse project
 
