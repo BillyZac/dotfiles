@@ -42,3 +42,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
+" Disambiguate :E
+cabbrev E Explore
