@@ -1,8 +1,5 @@
 inoremap jk <ESC>
 
-" Shortcut to rapidly toggle `set list`
-nmap <leader>l :set list!<CR>
-
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 
@@ -21,7 +18,20 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/syntastic'
 call plug#end()
 
-" Syntastic for beginners
+" Move between windows
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Auto-install any new plugins
+autocmd VimEnter *
+	\ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
+	\|   PlugInstall | q
+	\| endif
+
+" Syntastic
+let g:syntastic_javascript_checkers=['eslint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -31,3 +41,4 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+
