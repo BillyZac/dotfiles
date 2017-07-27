@@ -14,6 +14,8 @@ vnoremap <leader>s' <esc>`<i'<esc>`>i'<esc>
 
 " Move line down
 nnoremap - dd p 
+
+" Set line numbers
 set number
 
 " Move line up
