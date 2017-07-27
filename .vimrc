@@ -26,6 +26,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Plugins
 call plug#begin('~/.vim/autoload')
 Plug 'scrooloose/syntastic'
 call plug#end()
@@ -52,3 +53,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_solarized_bg='dark'
+
+" Put swap files in their place
+set dir=~/tmp
