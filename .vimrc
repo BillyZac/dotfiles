@@ -1,3 +1,6 @@
+colorscheme zellner
+syntax on
+
 inoremap jk <ESC>
 let mapleader = ","
 
