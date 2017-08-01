@@ -1,4 +1,5 @@
 colorscheme zellner
+set background=dark "Text is unreadable without this
 syntax on
 
 inoremap jk <ESC>
@@ -43,6 +44,8 @@ autocmd VimEnter *
 
 " Syntastic
 let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_typescript_checkers=['tsc', 'tslint']
+let g:syntastic_typescript_tsc_fname = ''
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -58,3 +61,10 @@ set dir=~/tmp
 
 " Disambiguate :E
 cabbrev E Explore
+
+" Typescript support
+set suffixesadd=.ts
+
+" Makes searches better
+set incsearch
+set hlsearch
