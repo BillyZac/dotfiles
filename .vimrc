@@ -31,12 +31,6 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" Auto-install any new plugins
-autocmd VimEnter *
-	\ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
-	\|   PlugInstall | q
-	\| endif
-
 " Put swap files in their place
 set dir=~/tmp
 
