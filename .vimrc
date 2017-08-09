@@ -25,11 +25,6 @@ set shiftwidth=2
 set expandtab
 
 
-" Plugins
-call plug#begin('~/.vim/plugged')
-  Plug 'scrooloose/syntastic'
-call plug#end()
-
 " Move between windows
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -41,20 +36,6 @@ autocmd VimEnter *
 	\ if !empty(filter(copy(g:plugs), '!isdirectory(v:val.dir)'))
 	\|   PlugInstall | q
 	\| endif
-
-" Syntastic
-let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_typescript_checkers=['tsc', 'tslint']
-let g:syntastic_typescript_tsc_fname = ''
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
 
 " Put swap files in their place
 set dir=~/tmp
