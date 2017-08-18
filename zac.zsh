@@ -2,7 +2,7 @@
 alias a="atom ."
 alias v="vim ."
 
-# Synapse project
+# ======= Synapse project
 
 # cd into Synapse front-end
 alias s="cd $HOME/work/synapse"
@@ -12,6 +12,14 @@ alias sf="echo '====================' && echo ENTER THE SYNAPSE!!! && echo '====
 
 # Synapse back-end
 alias sb="cd $HOME/work/eolas/ && npm install && node ./index.js"
+
+
+
+# ======= Bookit project
+alias bf="cd $HOME/work/bookit-web"
+alias bs="cd $HOME/work/bookit-server"
+
+
 
 # Fire up Mongo, which the server needs in the worst way
 alias m="mongod"
