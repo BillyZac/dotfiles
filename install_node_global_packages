@@ -1,5 +1,5 @@
 #!/bin/bash
 
-PACKAGES=(http-server httpster express-generator nodemon tree-cli trash-cli)
+PACKAGES=(http-server httpster express-generator nodemon tree-cli yarn)
 
 npm install -g $(echo ${PACKAGES[*]})
