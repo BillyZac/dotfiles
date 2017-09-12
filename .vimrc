@@ -43,3 +43,6 @@ set suffixesadd=.ts
 " Makes searches better
 set incsearch
 set hlsearch
+
+" Treat GLSL files as C 
+au BufReadPost *.frag set syntax=c
