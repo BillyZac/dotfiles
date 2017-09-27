@@ -16,3 +16,7 @@ alias m="mongod"
 
 # clear the screen, esp useful in tmux, where cmd+k doesn't play nice with panes
 alias c="clear"
+
+
+# Java/Kotlin
+alias gw="./gradlew"
