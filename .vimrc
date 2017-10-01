@@ -44,11 +44,7 @@ set suffixesadd=.ts
 set incsearch
 set hlsearch
 
-" enable AutoSave on Vim startup
-let g:auto_save = 1  
-
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'elmcast/elm-vim'
-Plug '907th/vim-auto-save'
 call plug#end()
