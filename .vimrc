@@ -47,4 +47,5 @@ set hlsearch
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'elmcast/elm-vim'
+Plug 'scrooloose/syntastic'
 call plug#end()
