@@ -20,26 +20,13 @@ appCuts = {
   f = 'Finder',
   m = 'Mail',
   a = 'Atom',
-  o = 'Microsoft Outlook'
-}
-
-favorites = {
-  z = 'Terminal',
-  g = 'Google chrome',
-  a = 'Atom',
-  m = 'Mail'
+  k = 'Sketch'
 }
 
 -- Launch applications
 for key, app in pairs(appCuts) do
   hs.hotkey.bind(mash_app, key, function () hs.application.launchOrFocus(app) end)
 end
-
-hs.hotkey.bind(mash, 'z', function()
-  for key, app in pairs(favorites) do
-    hs.application.launchOrFocus(app)
-  end
-end)
 
 -- global operations
 hs.hotkey.bind(mash, ';', function() hs.grid.snap(hs.window.focusedWindow()) end)
