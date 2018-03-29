@@ -1,6 +1,6 @@
 [user]
 	email = saoirse-zee@users.noreply.github.com
-	name = Zachary Smith
+	name = Emma Smith
 
 [color]
     ui = true
@@ -34,7 +34,7 @@
 [push]
 	default = simple
 [core]
-	excludesfile = /Users/zacharysmith/.gitignore_global
+	excludesfile = /Users/emmasmith/.gitignore_global
         editor = vim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
