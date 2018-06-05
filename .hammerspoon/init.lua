@@ -55,6 +55,14 @@ hs.hotkey.bind(mash, 'left', hs.grid.pushWindowLeft)
 hs.hotkey.bind(mash, 'down', hs.grid.pushWindowDown)
 hs.hotkey.bind(mash, 'up', hs.grid.pushWindowUp)
 hs.hotkey.bind(mash, 'right', hs.grid.pushWindowRight)
+local function centerWindow()
+  local win = hs.window.focusedWindow()
+  local f = win:frame()
+
+  f.x = f.x - 10
+  win:centerOnScreen(f)
+end
+hs.hotkey.bind({"cmd", "alt", "ctrl"}, "C", centerWindow)
 
 -- resize windows
 hs.hotkey.bind(mash_shift, 'left', hs.grid.resizeWindowThinner)
