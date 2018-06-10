@@ -11,6 +11,6 @@ do
 done
 
 # Set zsh aliases
-rm ~/.oh-my-zsh/custom/zac.zsh
-ln -s ~/dotfiles/zac.zsh ~/.oh-my-zsh/custom/zac.zsh &&
-echo "Linked .oh-my-zsh/custom/zac.zsh"
+rm ~/.oh-my-zsh/custom/me.zsh
+ln -s ~/dotfiles/me.zsh ~/.oh-my-zsh/custom/me.zsh &&
+echo "Linked .oh-my-zsh/custom/me.zsh"
