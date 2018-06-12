@@ -3,42 +3,44 @@
 	name = Emma Smith
 
 [color]
-    ui = true
+	ui = true
 
 [color "branch"]
-    current = yellow reverse
-    local = yellow
-    remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 
 [color "diff"]
-    meta = yellow bold
-    frag = magenta bold
-    old = red bold
-    new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = red
+	added = yellow
+	changed = green
+	untracked = red
 
 [alias]
-    co = checkout
-    cob = checkout -b
-    c = commit
-    cm = commit -m
-    cam = commit -am
-    st = status
-    br = branch
-    s = status -s
+	co = checkout
+	cob = checkout -b
+	c = commit
+	cm = commit -m
+	cam = commit -am
+	st = status
+	br = branch
+	s = status -s
 	lg = "log --oneline --decorate --all --"
 [push]
 	default = simple
 [core]
 	excludesfile = /Users/emmasmith/.gitignore_global
-        editor = vim
+	editor = atom
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = ~/.gitmessage
