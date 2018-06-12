@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DOTFILES=(.gitconfig .vimrc .bash_profile .zshrc .hammerspoon)
+DOTFILES=(.gitconfig .gitmessage .vimrc .bash_profile .zshrc .hammerspoon)
 
 #Remove old dotfiles and replace them
 for dotfile in $(echo ${DOTFILES[*]});
