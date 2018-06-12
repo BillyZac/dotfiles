@@ -8,12 +8,21 @@ alias v="vim ."
 alias pcd="cd $HOME/work/patronticket/react/public-ticket-site"
 # PTS audit the SF fields
 alias pa="cd $HOME/work/pm-pts-fields-audit && npm run audit"
-# PTS ngrok into locally running app
-alias png="~/ngrok http -subdomain=ptapp-wolverine-emma 3000"
 # PTS open dev instance of PTS
 alias po="open https://sfptdev-ts-162bf45b871-developer-edition.na59.force.com/ticket#/"
 # PTS sync the browser!
 alias pbs="pcd && browser-sync start --proxy 'https://sfptdev-ts-162bf45b871-developer-edition.na59.force.com/ticket\#/' --files src"
+# PTS start
+alias pst="PORT=3017 yarn react-scripts-ts start"
+# PTS Theme Builder start
+alias psttb="PORT=3017 yarn react-scripts start"
+# PTS ngrok into locally running app
+alias png="~/ngrok http -subdomain=ptapp-wolverine-emma 3017"
+# PTS ngrok into locally running theme builder
+alias ptng="~/ngrok http --subdomain=pts-theme-builder 3002"
+
+
+
 
 # Fire up Mongo
 alias m="mongod"
