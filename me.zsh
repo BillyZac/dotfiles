@@ -20,6 +20,8 @@ alias psttb="PORT=3017 yarn react-scripts start"
 alias png="~/ngrok http -subdomain=ptapp-wolverine-emma 3017"
 # PTS ngrok into locally running theme builder
 alias ptng="~/ngrok http --subdomain=pts-theme-builder 3002"
+# PTS deploy
+alias ptd="node $HOME/work/pts-scripts/deploy.sh"
 
 
 
