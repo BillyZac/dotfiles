@@ -6,7 +6,7 @@
 --------------------------------------------------------------------------------
 local pom={}
 pom.bar = {
-  indicator_height = 0.2, -- ratio from the height of the menubar (0..1)
+  indicator_height = 1.0, -- ratio from the height of the menubar (0..1)
   indicator_alpha  = 0.3,
   indicator_in_all_spaces = true,
   color_time_remaining = hs.drawing.color.green,

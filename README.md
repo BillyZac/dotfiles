@@ -1,10 +1,5 @@
 # dotfiles
 
-## Usage
+Clone it into your $HOME. This makes the configuration files available for your machine.
 
-Run `./install`
-
-This removes old dotfiles and replaces them with the dotfiles in this folder. It also install several global node packages.
-
-## P.S.
-Make sure you have permission to run a bash script. To check: `ls -l <script.sh>`. Run `chmod` as necessary to fix.
+Then run Run `~/install/install.sh`. This installs (or updates) a bunch of useful programs.

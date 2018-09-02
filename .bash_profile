@@ -17,3 +17,5 @@ PATH="$PATH:$HOME/usr/local/Cellar/chromedriver/2.21/bin"
 
 # Aliases
 alias a='atom .'
+
+export PATH="$HOME/.cargo/bin:$PATH"

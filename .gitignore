@@ -1,1 +1,24 @@
-npm-debug.log
+# Exclude everything by default
+/*
+*/
+
+# Include this file, duh.
+!.gitignore
+
+# Include installation scripts
+!install/
+
+# Include dotfiles
+!.bash_profile
+!.gitconfig
+!.gitmessage
+!.hammerspoon
+!.nvmrc
+!.vimrc
+!.zshrc
+!.zprofile
+!.zlogin
+!.zlogout
+!.zpreztorc
+!.zshenv
+
