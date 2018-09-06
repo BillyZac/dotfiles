@@ -21,14 +21,22 @@ appCuts = {
   s = 'Slack',
   f = 'Finder',
   m = 'Mail',
-  a = 'Atom',
-  k = 'Sketch'
+  k = 'Sketch',
+  d = 'Visual Studio Code',
 }
 
 -- Launch applications
 for key, app in pairs(appCuts) do
-  hs.hotkey.bind(mash_app, key, function () hs.application.launchOrFocus(app) end)
+  hs.hotkey.bind(
+	mash_app,
+	key,
+	function ()
+		hs.alert.show(app)
+		hs.application.launchOrFocus(app)
+	end
+)
 end
+
 
 -- global operations
 hs.hotkey.bind(mash, ';', function() hs.grid.snap(hs.window.focusedWindow()) end)
