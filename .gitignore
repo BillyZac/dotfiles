@@ -8,7 +8,7 @@
 # Include installation scripts
 !install/
 
-# Include dotfiles
+# Include dotfiles & configs
 !.bash_profile
 !.gitconfig
 !.gitmessage
@@ -21,4 +21,5 @@
 !.zlogout
 !.zpreztorc
 !.zshenv
+!Brewfile
 
