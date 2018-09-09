@@ -1,0 +1,5 @@
+# Save all videos under Movies directory in your home directory
+-o ~/media/%(title)s.%(ext)s
+--audio-format "mp3" 
+--audio-quality 0
+--write-description
