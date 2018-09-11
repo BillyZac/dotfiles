@@ -12,5 +12,8 @@ brew "youtube-dl"
 brew "zsh"
 brew "zsh-completions"
 brew "ffmpeg"
+brew "yarn"
+brew "gitup"
+cask "hammerspoon"
 cask "ngrok"
 
