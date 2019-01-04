@@ -4,9 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Java JDK 8
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-
 # Allows Ctrl-S to work in Vim
 stty -ixon
 
